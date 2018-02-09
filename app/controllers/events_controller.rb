@@ -40,6 +40,7 @@ skip_before_action :verify_authenticity_token, :only => [:invfriend]
   def invfriend
     @event = Event.find(params[:id])
     @event.attendees << User.find(params[:friend])
+    redirect_to @event
   end
 
 private

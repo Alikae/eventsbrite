@@ -7,7 +7,7 @@
 <p><%= @event.description %></p>
 
 <h2> La date </h2>
-<p><%= @event.date %></p>
+<p> <%= (@event.date-(@event.date/10000.to_i*10000))/100.to_i %> : <%=0 if @event.date-(@event.date/100.to_i*100)<10%><%= @event.date-(@event.date/100.to_i*100) %>__<%= (@event.date-(@event.date/1000000.to_i*1000000))/10000.to_i %> / <%=0 if (@event.date-(@event.date/100000000.to_i*100000000))/1000000.to_i<10%><%= (@event.date-(@event.date/100000000.to_i*100000000))/1000000.to_i %> / <%= @event.date/100000000.to_i %> </p>
 
 <h2> Le lieu </h2>
 <p><%= @event.place %></p>
